@@ -6,7 +6,7 @@ import { QuizQuestion } from "../types";
  * Tạo câu hỏi trắc nghiệm tự động
  */
 export const generateQuiz = async (topic: string, difficulty: string): Promise<QuizQuestion[]> => {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     try {
         const response = await ai.models.generateContent({
             model: 'gemini-3-flash-preview',
